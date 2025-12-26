@@ -31,7 +31,7 @@ void OrderPipeline::processOrdersFromFile(const std::string& filename)
         return;
     }
 
-    std::ofstream csvFile("order_processing_times.csv", std::ios::trunc); // Open in append mode
+    std::ofstream csvFile("./Process_Orders/order_processing_times.csv", std::ios::trunc); // Open in append mode
     if (!csvFile.is_open()) {
         std::cerr << "Error opening CSV file for writing." << std::endl;
         return;

@@ -16,6 +16,8 @@ set(Headers
     ./Limit_Order_Book/Order.hpp
     ./Process_Orders/OrderPipeline.hpp
     ./Generate_Orders/GenerateOrders.hpp
+    ./FIX_Protocol/FIXMessage.hpp
+    ./FIX_Protocol/FIXEngine.hpp
 )
 set(Sources
     ./Limit_Order_Book/Book.cpp
@@ -23,6 +25,8 @@ set(Sources
     ./Limit_Order_Book/Order.cpp
     ./Process_Orders/OrderPipeline.cpp
     ./Generate_Orders/GenerateOrders.cpp
+    ./FIX_Protocol/FIXMessage.cpp
+    ./FIX_Protocol/FIXEngine.cpp
 )
 
 # Define the library target
@@ -33,6 +37,10 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 # Link the executable with the library
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}_lib)
+
+# Define the FIX Demo executable
+add_executable(FIXDemo ./FIX_Protocol/FIXDemo.cpp)
+target_link_libraries(FIXDemo PRIVATE ${PROJECT_NAME}_lib)
 
 add_subdirectory(test)
 
