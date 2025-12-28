@@ -31,7 +31,6 @@ void OrderPipeline::processOrdersFromFile(const std::string& filename)
         return;
     }
 
-    //std::ofstream csvFile("F:/AlphaHunt/CPP_Work/VectorBased/Limit-Order-Book-main/Process_Orders/order_processing_times.csv", std::ios::trunc);
     std::ofstream csvFile("./Process_Orders/order_processing_times.csv", std::ios::trunc);
     if (!csvFile.is_open()) {
         std::cerr << "Error opening CSV file for writing." << std::endl;
